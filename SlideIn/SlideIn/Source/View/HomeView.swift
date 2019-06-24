@@ -16,6 +16,9 @@ struct HomeView : View {
         ZStack {
             Rectangle()
                 .fill(userSelection.selectedColor)
+                .gesture(DragGesture().onEnded({ _ in
+                    self.userSelection.showSideMenu.toggle()
+                }))
             VStack {
                 HStack {
                     Button(action: {
