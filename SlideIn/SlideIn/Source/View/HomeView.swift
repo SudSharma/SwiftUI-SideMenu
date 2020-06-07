@@ -9,47 +9,47 @@
 import SwiftUI
 
 struct HomeView : View {
-    @EnvironmentObject private var userSelection: UserSelection
-    @State private var shouldMoveOffset: Bool = false
+    @State private var shouldMoveOffset = false
+    @Binding var selectedColor: Color
+    @Binding var showSideMenu: Bool
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .topLeading) {
             Rectangle()
-                .fill(userSelection.selectedColor)
+                .fill(selectedColor)
                 .gesture(DragGesture().onEnded({ _ in
-                    self.userSelection.showSideMenu.toggle()
+                    self.showSideMenu.toggle()
                 }))
-            VStack {
+            VStack(alignment: .center) {
+                Spacer()
+                    .frame(height: 50.0)
                 HStack {
                     Button(action: {
-                        self.userSelection.showSideMenu.toggle()
+                        self.showSideMenu.toggle()
                     }, label: {
-                        Image(userSelection.showSideMenu ? "Cross" : "Hamburger")
+                        Image(systemName: showSideMenu ? "multiply" : "line.horizontal.3")
+                            .imageScale(.large)
                             .foregroundColor(Color.white)
-                            .rotationEffect(.degrees(userSelection.showSideMenu ? 0 : 180))
-                            .animation(.fluidSpring())
+                            .rotationEffect(.degrees(showSideMenu ? 0 : 180))
+                            .animation(.spring())
                     })
-                        .offset(x: 30.0, y: 60.0)
+                        .padding(.leading, 20.0)
                     Spacer()
                 }
                 Spacer()
-            }
-            Text("Slide In")
-                .color(Color.white)
+                
+                Text("Slide In")
+                .foregroundColor(Color.white)
                 .font(.system(size: 70))
                 .fontWeight(Font.Weight.ultraLight)
+                Spacer()
+            }
+
+            
         }
         .edgesIgnoringSafeArea(.all)
         .shadow(color: Color.gray, radius: 10.0, x: 0.0, y: 0.0)
-        .offset(x: userSelection.showSideMenu ? 320.0 : 0.0, y: 0.0)
-        .animation(.fluidSpring())
+        .offset(x: showSideMenu ? UIScreen.main.bounds.size.width - 60.0 : 0.0, y: 0.0)
+        .animation(.spring())
     }
 }
-
-#if DEBUG
-struct HomeView_Previews : PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
-#endif

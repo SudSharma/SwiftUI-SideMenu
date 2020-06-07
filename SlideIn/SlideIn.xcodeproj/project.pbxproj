@@ -16,7 +16,6 @@
 		9CEBBFD222C04E0800A8E874 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEBBFCE22C04E0800A8E874 /* SideMenuView.swift */; };
 		9CEBBFD922C04E1400A8E874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CEBBFD422C04E1400A8E874 /* Assets.xcassets */; };
 		9CEBBFDD22C04E2300A8E874 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEBBFDB22C04E2300A8E874 /* LaunchScreen.storyboard */; };
-		9CEBBFDF22C04E9E00A8E874 /* UserSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEBBFDE22C04E9E00A8E874 /* UserSelection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		9CEBBFD322C04E1400A8E874 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CEBBFD422C04E1400A8E874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CEBBFDC22C04E2300A8E874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9CEBBFDE22C04E9E00A8E874 /* UserSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 		9CEBBFC322C04D9100A8E874 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				9CEBBFDE22C04E9E00A8E874 /* UserSelection.swift */,
 				9C569F7F22C09F3600365BCB /* ColorsData.swift */,
 			);
 			path = DataModel;
@@ -203,7 +200,6 @@
 				9CEBBFCF22C04E0800A8E874 /* HomeView.swift in Sources */,
 				9CEBBFCA22C04DF800A8E874 /* AppDelegate.swift in Sources */,
 				9CEBBFD022C04E0800A8E874 /* ContentView.swift in Sources */,
-				9CEBBFDF22C04E9E00A8E874 /* UserSelection.swift in Sources */,
 				9CEBBFC922C04DF800A8E874 /* SceneDelegate.swift in Sources */,
 				9C569F8022C09F3600365BCB /* ColorsData.swift in Sources */,
 			);

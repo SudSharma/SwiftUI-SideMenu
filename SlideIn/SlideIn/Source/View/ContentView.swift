@@ -9,14 +9,13 @@
 import SwiftUI
 
 struct ContentView : View {
-    private var userSelection = UserSelection()
+    @State var selectedColor = colorPalette[0][0]
+    @State var showSideMenu = false
     
     var body: some View {
         ZStack {
-            HStack {
-                SideMenuView().environmentObject(userSelection)
-            }
-            HomeView().environmentObject(userSelection)
+            SideMenuView(selectedColor: self.$selectedColor, showSideMenu: self.$showSideMenu)
+            HomeView(selectedColor: self.$selectedColor, showSideMenu: self.$showSideMenu)
         }
     }
 }

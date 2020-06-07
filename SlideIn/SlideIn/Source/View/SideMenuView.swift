@@ -10,7 +10,8 @@ import SwiftUI
 
 
 struct SideMenuView : View {
-    @EnvironmentObject private var userSelection: UserSelection
+    @Binding var selectedColor: Color
+    @Binding var showSideMenu: Bool
     
     var body: some View {
         VStack {
@@ -20,45 +21,48 @@ struct SideMenuView : View {
                     .padding(30)
                 Spacer()
             }
-            ForEach(userSelection.colors.identified(by: \.self)) { colorRow in
-                ScrollView(showsHorizontalIndicator: false) {
-                    HStack {
-                        ForEach(colorRow.identified(by: \.self)) { color in
-                            Button(action: {
-                                self.userSelection.selectedColor = color
-                                self.userSelection.showSideMenu = false
-                            }, label: {
-                                if self.userSelection.selectedColor == color {
-                                    ZStack {
-                                        Circle()
-                                            .fill(color)
-                                            .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                                            .shadow(radius: 5)
-                                            .animation(.basic())
-                                        Image("Checkmark")
-                                            .foregroundColor(Color.white)
-                                    }
-                                }
-                                else {
-                                    Circle().fill(color)
-                                }
-                            })
-                                .frame(width: 60, height: 60)
-                                .padding(5)
-                        }
-                        Spacer()
-                    }
-                    .padding(10)
-                }
+            ForEach(colorPalette, id: \.self) { colorRow in
+                ColorRowView(colors: colorRow, selectedColor: self.$selectedColor, showSideMenu: self.$showSideMenu)
+                .padding(10)
             }
         }
     }
 }
 
-#if DEBUG
-struct SideMenuView_Previews : PreviewProvider {
-    static var previews: some View {
-        SideMenuView()
+struct ColorRowView : View {
+    let colors: [Color]
+    @Binding var selectedColor: Color
+    @Binding var showSideMenu: Bool
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            Spacer()
+            HStack(spacing: 10.0) {
+                Spacer()
+                ForEach(colors, id: \.self) { color in
+                    Button(action: {
+                        self.selectedColor = color
+                        self.showSideMenu = false
+                    }) {
+                        if self.selectedColor == color {
+                            ZStack {
+                                Circle()
+                                    .fill(color)
+                                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                                    .overlay(Circle().stroke(color, lineWidth: 1))
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(Color.white)
+                            }
+                        }
+                        else {
+                            Circle().fill(color)
+                        }
+                    }
+                    .frame(width: 60, height: 60)
+                }
+                Spacer()
+            }
+            Spacer()
+        }
     }
 }
-#endif

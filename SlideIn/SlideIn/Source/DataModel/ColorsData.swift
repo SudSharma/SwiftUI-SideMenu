@@ -9,47 +9,9 @@
 import Combine
 import SwiftUI
 
-let colorsData: [[Color]] = [[Color.sunflower, Color.radiantYellow, Color.puffinsBill, Color.carminePink, Color.redPigment, Color.white],
-                             [Color.energos, Color.androidGreen, Color.ufoGreen, Color.pixelatedGrass, Color.turkishAqua, Color.white],
-                             [Color.limeGreen, Color.middleBlue, Color.blueMarina, Color.clearChill, Color.merchantMarineBlue, Color.leaguesUnderTheSea, Color.white],
-                             [Color.lavenderRose, Color.lavenderTea, Color.forgottenPurple, Color.gloomyPurple, Color.circumorbitalRing, Color.white],
-                             [Color.baraRed, Color.veryBerry, Color.hollyhock, Color.lucky, Color.magentaPurple, Color.white],
-                             [Color.twinkleBlue, Color.peace, Color.coolGray, Color.shadowedSteel, Color.prestigeBlue, Color.white]]
-extension Color {
-    static let sunflower = Color(red: 255/255, green: 195/255, blue: 18/255)
-    static let radiantYellow = Color(red: 247/255, green: 159/255, blue: 31/255)
-    static let puffinsBill = Color(red: 238/255, green: 90/255, blue: 36/255)
-    static let carminePink = Color(red: 235/255, green: 77/255, blue: 75/255)
-    static let redPigment = Color(red: 234/255, green: 32/255, blue: 39/255)
-    
-    static let energos = Color(red: 196/255, green: 229/255, blue: 56/255)
-    static let androidGreen = Color(red: 163/255, green: 203/255, blue: 56/255)
-    static let ufoGreen = Color(red: 46/255, green: 213/255, blue: 115/255)
-    static let pixelatedGrass = Color(red: 0, green: 148/255, blue: 50/255)
-    static let turkishAqua = Color(red: 0, green: 98/255, blue: 102/255)
-    
-    static let limeGreen = Color(red: 123/255, green: 237/255, blue: 159/255)
-    static let middleBlue = Color(red: 126/255, green: 214/255, blue: 223/255)
-    static let blueMarina = Color(red: 18/255, green: 203/255, blue: 196/255)
-    static let clearChill = Color(red: 30/255, green: 144/255, blue: 255/255)
-    static let merchantMarineBlue = Color(red: 6/255, green: 82/255, blue: 221/255)
-    static let leaguesUnderTheSea = Color(red: 27/255, green: 20/255, blue: 100/255)
-    
-    static let lavenderRose = Color(red: 253/255, green: 167/255, blue: 223/255)
-    static let lavenderTea = Color(red: 217/255, green: 128/255, blue: 250/255)
-    static let forgottenPurple = Color(red: 153/255, green: 128/255, blue: 250/255)
-    static let gloomyPurple = Color(red: 136/255, green: 84/255, blue: 208/255)
-    static let circumorbitalRing = Color(red: 87/255, green: 88/255, blue: 187/255)
-    
-    static let baraRed = Color(red: 237/255, green: 76/255, blue: 103/255)
-    static let veryBerry = Color(red: 181/255, green: 52/255, blue: 113/255)
-    static let hollyhock = Color(red: 131/255, green: 52/255, blue: 113/255)
-    static let lucky = Color(red: 44/255, green: 44/255, blue: 84/255)
-    static let magentaPurple = Color(red: 111/255, green: 30/255, blue: 81/255)
-    
-    static let twinkleBlue = Color(red: 206/255, green: 214/255, blue: 224/255)
-    static let peace = Color(red: 164/255, green: 176/255, blue: 190/255)
-    static let coolGray = Color(red: 96/255, green: 125/255, blue: 139/255)
-    static let prestigeBlue = Color(red: 47/255, green: 53/255, blue: 66/255)
-    static let shadowedSteel = Color(red: 75/255, green: 75/255, blue: 75/255)
-}
+let colorPalette = [[Color(#colorLiteral(red: 1, green: 0.7647058824, blue: 0.07058823529, alpha: 1)), Color(#colorLiteral(red: 0.968627451, green: 0.6235294118, blue: 0.1215686275, alpha: 1)), Color(#colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.1411764706, alpha: 1)), Color(#colorLiteral(red: 0.9215686275, green: 0.3019607843, blue: 0.2941176471, alpha: 1)), Color(#colorLiteral(red: 0.9176470588, green: 0.1254901961, blue: 0.1529411765, alpha: 1)), Color.white],
+                    [Color(#colorLiteral(red: 0.768627451, green: 0.8980392157, blue: 0.2196078431, alpha: 1)), Color(#colorLiteral(red: 0.6392156863, green: 0.7960784314, blue: 0.2196078431, alpha: 1)), Color(#colorLiteral(red: 0.1803921569, green: 0.8352941176, blue: 0.4509803922, alpha: 1)), Color(#colorLiteral(red: 0, green: 0.5803921569, blue: 0.1960784314, alpha: 1)), Color(#colorLiteral(red: 0, green: 0.3843137255, blue: 0.4, alpha: 1)), Color.white],
+                    [Color(#colorLiteral(red: 0.4823529412, green: 0.9294117647, blue: 0.6235294118, alpha: 1)), Color(#colorLiteral(red: 0.4941176471, green: 0.8392156863, blue: 0.8745098039, alpha: 1)), Color(#colorLiteral(red: 0.07058823529, green: 0.7960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.1176470588, green: 0.9568627451, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.02352941176, green: 0.3215686275, blue: 0.8666666667, alpha: 1)), Color(#colorLiteral(red: 0.1058823529, green: 0.07843137255, blue: 0.3921568627, alpha: 1)), Color.white],
+                    [Color(#colorLiteral(red: 0.9921568627, green: 0.6549019608, blue: 0.8745098039, alpha: 1)), Color(#colorLiteral(red: 0.8509803922, green: 0.5019607843, blue: 0.9803921569, alpha: 1)), Color(#colorLiteral(red: 0.6, green: 0.5019607843, blue: 0.9803921569, alpha: 1)), Color(#colorLiteral(red: 0.5333333333, green: 0.3294117647, blue: 0.8156862745, alpha: 1)), Color(#colorLiteral(red: 0.3411764706, green: 0.3450980392, blue: 0.7333333333, alpha: 1)), Color.white],
+                    [Color(#colorLiteral(red: 0.9294117647, green: 0.2980392157, blue: 0.4039215686, alpha: 1)), Color(#colorLiteral(red: 0.7098039216, green: 0.2039215686, blue: 0.4431372549, alpha: 1)), Color(#colorLiteral(red: 0.5137254902, green: 0.2039215686, blue: 0.4431372549, alpha: 1)), Color(#colorLiteral(red: 0.1725490196, green: 0.1725490196, blue: 0.3294117647, alpha: 1)), Color(#colorLiteral(red: 0.4352941176, green: 0.1176470588, blue: 0.3176470588, alpha: 1)), Color.white],
+                    [Color(#colorLiteral(red: 0.8078431373, green: 0.8392156863, blue: 0.8784313725, alpha: 1)), Color(#colorLiteral(red: 0.6431372549, green: 0.6901960784, blue: 0.7450980392, alpha: 1)), Color(#colorLiteral(red: 0.3764705882, green: 0.4901960784, blue: 0.5450980392, alpha: 1)), Color(#colorLiteral(red: 0.2941176471, green: 0.2941176471, blue: 0.2941176471, alpha: 1)), Color(#colorLiteral(red: 0.1843137255, green: 0.2078431373, blue: 0.2588235294, alpha: 1)), Color.white]]
